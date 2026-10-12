@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,71 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# Next.js Build Outputs & Cache
 /.next/
 /out/
+/build/
+/dist/
+/.turbo/
+.cache/
 
-# production
-/build
+# Testing & Coverage
+/coverage/
+/.nyc_output/
 
-# misc
-.DS_Store
+# Environment Variables & Secrets (Keep .env.example tracked if present)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+!.env.example
 *.pem
 
-# debug
+# Debug & Process Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+lerna-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# Vercel Deployment Metadata
+/.vercel/
 
-# vercel
-.vercel
-
-# typescript
+# TypeScript Build Info
 *.tsbuildinfo
 next-env.d.ts
+
+# Linter & Tooling Cache
+.eslintcache
+.stylelintcache
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Directories (Local configurations)
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-workspace
+*.sublime-project
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Temporary Files
+tmp/
+temp/
