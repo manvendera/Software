@@ -27,25 +27,25 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop";
 
   return (
-    <article className="group rounded-md border border-slate-200 bg-white shadow-sm p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <article className="group rounded-xl border border-slate-200/90 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(0,117,162,0.12)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-[#0075A2]/40">
       <div>
         {/* Top Image Preview matching Xntrova */}
-        <div className="relative h-48 sm:h-52 w-full rounded-sm overflow-hidden mb-4 bg-slate-100">
+        <div className="relative h-48 sm:h-52 w-full rounded-lg overflow-hidden mb-4 bg-slate-100">
           <img
             src={imgSrc}
             alt={service.title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute top-2.5 right-2.5">
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-sm bg-white/95 text-[#0075A2] shadow-sm uppercase tracking-wider">
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-md backdrop-blur-md bg-white/95 text-[#0075A2] shadow-sm uppercase tracking-wider border border-white/60">
               {service.category}
             </span>
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="font-bold text-[#101820] text-lg mb-2 group-hover:text-[#0075A2] transition-colors leading-snug">
+        <h3 className="font-bold text-[#101820] text-lg mb-2 group-hover:text-[#0075A2] transition-colors leading-snug tracking-tight">
           {service.title}
         </h3>
 
@@ -55,9 +55,9 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
         </p>
 
         {/* Deliverables */}
-        <ul className="space-y-1.5 mb-5 text-xs text-slate-500">
+        <ul className="space-y-2 mb-5 text-xs text-slate-600">
           {service.deliverables.slice(0, 3).map((d, idx) => (
-            <li key={idx} className="flex items-center gap-1.5">
+            <li key={idx} className="flex items-center gap-2">
               <CheckCircle2 className="h-3.5 w-3.5 text-[#0075A2] shrink-0" />
               <span>{d}</span>
             </li>
@@ -66,17 +66,17 @@ export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
       </div>
 
       {/* Learn More link in #0075A2 matching Xntrova */}
-      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-        <span className="text-[11px] font-semibold text-[#0075A2]">
+      <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between">
+        <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-[#0075A2]/10 text-[#0075A2]">
           {service.metricsHighlight}
         </span>
         <a
           href="#audit"
           onClick={() => onSelectService && onSelectService(service.title)}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0075A2] hover:underline"
+          className="group/link inline-flex items-center gap-1.5 text-xs font-bold text-[#0075A2] hover:text-[#005f85] transition-colors"
         >
           <span>Learn More</span>
-          <ArrowRight className="h-3.5 w-3.5" />
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
         </a>
       </div>
     </article>

@@ -18,13 +18,13 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0075A2] block mb-2">
-            Get In Touch
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-semibold text-[#0075A2] bg-[#0075A2]/10 border border-[#0075A2]/20 mb-3.5 uppercase tracking-wider">
+            <span>Get In Touch</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3 tracking-tight">
             Direct Access to Digital Strategists
           </h2>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
             Have questions about growing your organic reach or scaling paid advertising? Let’s connect.
           </p>
         </div>
@@ -32,14 +32,14 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Direct Contact Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-md border border-slate-200 bg-white p-6 sm:p-7 shadow-sm space-y-5">
-              <h3 className="text-lg font-bold text-[#101820]">
+            <div className="rounded-xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.03)] space-y-6">
+              <h3 className="text-lg font-bold text-[#101820] tracking-tight">
                 Official Agency Contacts
               </h3>
 
-              <div className="space-y-4 text-xs sm:text-sm">
-                <div className="flex items-start gap-3.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-[#0075A2]/10 text-[#0075A2] shrink-0">
+              <div className="space-y-5 text-xs sm:text-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0075A2]/10 text-[#0075A2] shrink-0 shadow-2xs">
                     <Phone className="h-4 w-4" />
                   </div>
                   <div>
@@ -53,8 +53,8 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-[#0075A2]/10 text-[#0075A2] shrink-0">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0075A2]/10 text-[#0075A2] shrink-0 shadow-2xs">
                     <Mail className="h-4 w-4" />
                   </div>
                   <div>
@@ -68,8 +68,8 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-[#0075A2]/10 text-[#0075A2] shrink-0">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0075A2]/10 text-[#0075A2] shrink-0 shadow-2xs">
                     <MapPin className="h-4 w-4" />
                   </div>
                   <div>
@@ -80,8 +80,8 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-[#0075A2]/10 text-[#0075A2] shrink-0">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0075A2]/10 text-[#0075A2] shrink-0 shadow-2xs">
                     <Clock className="h-4 w-4" />
                   </div>
                   <div>

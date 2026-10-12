@@ -22,12 +22,11 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-12 items-center">
           {/* Left Column: Editorial Content */}
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0075A2] mb-3">
-              <span className="h-px w-6 bg-[#0075A2]/60" aria-hidden="true" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-semibold text-[#0075A2] bg-[#0075A2]/10 border border-[#0075A2]/20 mb-4 uppercase tracking-wider">
               <span>About Xntrova</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#101820] leading-[1.18] mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#101820] leading-[1.15] mb-5 tracking-tight">
               <span className="block">Driven By Ideas.</span>
               <span className="block">
                 Focused on <span className="text-[#0075A2]">Results</span>
@@ -38,7 +37,7 @@ export function AboutSection() {
               At Xntrova, we believe that the key to great marketing is understanding people. Each of our strategies is rooted in fresh ideas, robust planning, and a clear focus on what truly matters. We combine creativity with data-driven decisions to create meaningful experiences that connect, engage, and inspire action.
             </p>
 
-            <p className="border-l-2 border-[#0075A2]/30 pl-4 text-sm text-slate-500 leading-relaxed mb-8">
+            <p className="border-l-2 border-[#0075A2]/40 pl-4 py-1 text-sm text-slate-500 leading-relaxed mb-8 bg-slate-50/50 rounded-r-md">
               Whether you want to shape your brand story, improve visibility, or drive conversion, we take a creative and data-driven approach to ensure the best possible results. Standing as the premier digital marketing agency in Delhi NCR, we aim to create work that delivers measurable outcomes and helps your business climb the competitive ladder with confidence.
             </p>
 
@@ -119,14 +118,14 @@ export function AboutSection() {
                 className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0075A2]/20"
                 aria-hidden="true"
               />
-              {/* Outer spinning dashed ring */}
+              {/* Outer spinning dashed ring with subtle glow */}
               <div
-                className="animate-spin-slow absolute inset-0 m-auto h-[90%] w-[90%] rounded-full border border-dashed border-[#0075A2]/25"
+                className="animate-spin-slow absolute inset-0 m-auto h-[90%] w-[90%] rounded-full border border-dashed border-[#0075A2]/30 shadow-[0_0_40px_rgba(0,117,162,0.06)]"
                 aria-hidden="true"
               />
 
               {/* Center circular badge with Xntrova Logo */}
-              <div className="absolute inset-0 m-auto flex h-32 w-32 flex-col items-center justify-center gap-1.5 rounded-full border border-slate-200 bg-white p-4 text-center shadow-[0_8px_30px_rgba(0,117,162,0.18)] z-10">
+              <div className="absolute inset-0 m-auto flex h-32 w-32 flex-col items-center justify-center gap-1.5 rounded-full border border-slate-200/90 bg-white p-4 text-center shadow-[0_12px_40px_rgba(0,117,162,0.18)] z-10 hover:scale-105 transition-transform duration-300">
                 <div className="relative h-7 w-24">
                   <Image
                     src="https://res.cloudinary.com/di93stsbz/image/upload/v1788158799/cms-settings/cx4pzlnw2srdmd5ckfjp.png"
@@ -135,7 +134,7 @@ export function AboutSection() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">
                   Driven by Results
                 </span>
               </div>
@@ -143,11 +142,11 @@ export function AboutSection() {
               {/* 4 Corner Orbiting Floating Cards */}
               {/* Top Left */}
               <div className="absolute left-0 top-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-md border border-slate-200 bg-white p-3 shadow-md hover:-translate-y-1 transition-transform">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0075A2]/10 text-[#0075A2]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
                     <Eye className="h-4 w-4" />
                   </span>
-                  <p className="mt-2 font-semibold text-[#101820] text-xs leading-tight">
+                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
                     Build Visibility
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -158,11 +157,11 @@ export function AboutSection() {
 
               {/* Top Right */}
               <div className="absolute right-0 top-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-md border border-slate-200 bg-white p-3 shadow-md hover:-translate-y-1 transition-transform">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0075A2]/10 text-[#0075A2]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
                     <Users className="h-4 w-4" />
                   </span>
-                  <p className="mt-2 font-semibold text-[#101820] text-xs leading-tight">
+                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
                     Engage Audience
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -173,11 +172,11 @@ export function AboutSection() {
 
               {/* Bottom Left */}
               <div className="absolute left-0 bottom-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-md border border-slate-200 bg-white p-3 shadow-md hover:-translate-y-1 transition-transform">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0075A2]/10 text-[#0075A2]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
                     <MousePointerClick className="h-4 w-4" />
                   </span>
-                  <p className="mt-2 font-semibold text-[#101820] text-xs leading-tight">
+                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
                     Drive Conversions
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -188,11 +187,11 @@ export function AboutSection() {
 
               {/* Bottom Right */}
               <div className="absolute right-0 bottom-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-md border border-slate-200 bg-white p-3 shadow-md hover:-translate-y-1 transition-transform">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0075A2]/10 text-[#0075A2]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
                     <Gauge className="h-4 w-4" />
                   </span>
-                  <p className="mt-2 font-semibold text-[#101820] text-xs leading-tight">
+                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
                     Measure & Improve
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -202,26 +201,36 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Performance Overview Card matching Xntrova */}
+            {/* Performance Overview Card matching Xntrova with Gradient Chart Fill */}
             <div className="mt-6 sm:mt-8 max-w-xs mx-auto">
-              <div className="rounded-md border border-slate-200 bg-white p-4 shadow-lg">
+              <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-4.5 shadow-[0_12px_36px_rgba(0,117,162,0.08)] hover:shadow-[0_16px_40px_rgba(0,117,162,0.12)] transition-shadow">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-xs font-bold text-[#101820]">
                     Performance Overview
                   </p>
-                  <span className="inline-flex items-center gap-1 rounded-sm bg-[#0075A2]/10 px-2 py-0.5 text-[10px] font-semibold text-[#0075A2]">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#0075A2]/10 px-2.5 py-0.5 text-[10px] font-bold text-[#0075A2]">
                     <TrendingUp className="h-3 w-3" />
                     Growing
                   </span>
                 </div>
 
-                {/* SVG trend line */}
+                {/* SVG trend line with subtle gradient fill */}
                 <svg
                   viewBox="0 0 120 40"
-                  className="mt-3 w-full h-10"
+                  className="mt-3 w-full h-11"
                   preserveAspectRatio="none"
                   aria-hidden="true"
                 >
+                  <defs>
+                    <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#0075A2" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="#0075A2" stopOpacity="0.0" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M2 35 C 20 32, 30 24, 42 26 S 62 16, 74 14 S 96 6, 118 4 L 118 40 L 2 40 Z"
+                    fill="url(#trendGradient)"
+                  />
                   <path
                     d="M2 35 C 20 32, 30 24, 42 26 S 62 16, 74 14 S 96 6, 118 4"
                     fill="none"
@@ -231,7 +240,7 @@ export function AboutSection() {
                   />
                 </svg>
 
-                <dl className="mt-3 grid grid-cols-3 gap-2 border-t border-slate-200 pt-3 text-center">
+                <dl className="mt-3 grid grid-cols-3 gap-2 border-t border-slate-100 pt-3 text-center">
                   <div>
                     <dt className="text-[10px] text-slate-500 leading-tight">
                       Organic Traffic

@@ -142,15 +142,17 @@ export function Header() {
         {/* Main Header Bar */}
         <div
           className={cn(
-            "w-full px-5 sm:px-8 lg:px-10 border-b border-slate-200 transition-all duration-200",
-            isScrolled ? "py-2.5 shadow-sm" : "py-3.5 lg:py-4"
+            "w-full px-5 sm:px-8 lg:px-10 border-b border-slate-200/90 transition-all duration-300",
+            isScrolled
+              ? "py-2.5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] bg-white/95 backdrop-blur-md"
+              : "py-3.5 lg:py-4 bg-white"
           )}
         >
           <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-6">
             {/* Real Xntrova Brand Logo from Cloudinary */}
             <a
               href="#hero"
-              className="flex items-center gap-2 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2] rounded-sm"
+              className="flex items-center gap-2 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2] rounded-sm transition-transform hover:scale-[1.02] active:scale-[0.98]"
               aria-label="Xntrova Homepage"
             >
               <Image
@@ -178,7 +180,7 @@ export function Header() {
                   {/* Yellow hover indicator line underneath matching Xntrova */}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-4 right-4 -bottom-px h-0.5 rounded-full bg-[#FAAE39] origin-left transition-transform duration-200 scale-x-0 group-hover:scale-x-100"
+                    className="pointer-events-none absolute left-3.5 right-3.5 -bottom-px h-0.5 rounded-full bg-[#FAAE39] origin-left transition-transform duration-200 scale-x-0 group-hover:scale-x-100"
                   />
                 </a>
               ))}
@@ -187,7 +189,7 @@ export function Header() {
             {/* Right-Side Region & CTA Controls */}
             <div className="flex items-center gap-3">
               {/* Region Pill */}
-              <div className="hidden lg:flex items-center gap-1.5 rounded-sm border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-[#101820]">
+              <div className="hidden lg:flex items-center gap-1.5 rounded-sm border border-slate-300/80 bg-slate-50/60 px-3 py-1.5 text-xs font-medium text-[#101820] transition-colors hover:border-[#0075A2]/50 hover:bg-white cursor-pointer select-none">
                 <Globe className="h-3.5 w-3.5 text-[#0075A2]" />
                 <span>India</span>
                 <ChevronDown className="h-3 w-3 text-slate-500" />
@@ -196,7 +198,7 @@ export function Header() {
               {/* Free Audit Button */}
               <a
                 href="#audit"
-                className="inline-flex items-center px-5 py-2.5 rounded-sm bg-[#FAAE39] text-[#101820] text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2]"
+                className="inline-flex items-center px-5 py-2.5 rounded-sm bg-[#FAAE39] text-[#101820] text-xs font-bold uppercase tracking-wider shadow-sm hover:shadow-md hover:bg-[#e89c25] active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2]"
               >
                 Get Free Audit
               </a>

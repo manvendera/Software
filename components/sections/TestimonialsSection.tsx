@@ -22,14 +22,14 @@ export function TestimonialsSection() {
       aria-label="Client Testimonials"
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0075A2] block mb-2">
-            Verified Endorsements
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-semibold text-[#0075A2] bg-[#0075A2]/10 border border-[#0075A2]/20 mb-3.5 uppercase tracking-wider">
+            <span>Verified Endorsements</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3 tracking-tight">
             Trusted Partnerships. Meaningful Experiences.
           </h2>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
             Read direct feedback from company leaders partnering with Xntrova to scale organic and paid digital performance.
           </p>
         </div>
@@ -39,19 +39,19 @@ export function TestimonialsSection() {
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={t.id}
-              className="flex flex-col justify-between rounded-md border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="flex flex-col justify-between rounded-xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(0,117,162,0.12)] hover:-translate-y-1.5 hover:border-[#0075A2]/40 transition-all duration-300"
             >
               <div>
                 {/* Header with Avatar, Name, and Google Icon */}
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
                     <span
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white text-sm font-bold ${
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white text-sm font-bold shadow-sm ${
                         idx === 0
                           ? "bg-[#0075A2]"
                           : idx === 1
                           ? "bg-[#0A4257]"
-                          : "bg-[#FAAE39]"
+                          : "bg-[#FAAE39] text-[#101820]"
                       }`}
                     >
                       {t.initial}
@@ -66,8 +66,8 @@ export function TestimonialsSection() {
 
                   {/* Google Icon Badge matching Xntrova */}
                   <svg
-                    width="18"
-                    height="18"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                     className="shrink-0 mt-0.5"
@@ -105,8 +105,10 @@ export function TestimonialsSection() {
               </div>
 
               <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-                <span>Verified Client Review</span>
-                <span className="font-semibold text-emerald-600">5.0 / 5.0 ★</span>
+                <span className="font-medium">Verified Google Review</span>
+                <span className="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
+                  5.0 ★
+                </span>
               </div>
             </div>
           ))}

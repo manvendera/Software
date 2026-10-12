@@ -13,13 +13,13 @@ export function PortfolioSection() {
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0075A2] block mb-2">
-            Selected Work
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-semibold text-[#0075A2] bg-[#0075A2]/10 border border-[#0075A2]/20 mb-3.5 uppercase tracking-wider">
+            <span>Selected Work</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3 tracking-tight">
             Ideas Brought to Life
           </h2>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
             Proven results delivered for established enterprises and ambitious high-growth businesses.
           </p>
         </div>
