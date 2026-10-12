@@ -1,123 +1,83 @@
 "use client";
 
 import React from "react";
-import {
-  Search,
-  Target,
-  Share2,
-  Code2,
-  FileText,
-  ShoppingBag,
-  Smartphone,
-  Palette,
-  ArrowRight,
-  CheckCircle2,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ServiceItem } from "@/data/services";
-import { cn } from "@/lib/utils";
-
-const ICON_MAP: Record<string, React.ElementType> = {
-  Search,
-  Target,
-  Share2,
-  Code2,
-  FileText,
-  ShoppingBag,
-  Smartphone,
-  Palette,
-};
 
 interface ServiceCardProps {
   service: ServiceItem;
   onSelectService?: (serviceTitle: string) => void;
 }
 
+// High quality curated preview images corresponding to each service
+const SERVICE_IMAGES: Record<string, string> = {
+  seo: "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?q=80&w=800&auto=format&fit=crop",
+  "paid-ads": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+  "social-media": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop",
+  "web-dev": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+  "content-marketing": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+  ecommerce: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+  "app-dev": "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop",
+  branding: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop",
+};
+
 export function ServiceCard({ service, onSelectService }: ServiceCardProps) {
-  const IconComponent = ICON_MAP[service.iconName] || Sparkles;
+  const imgSrc =
+    SERVICE_IMAGES[service.id] ||
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop";
 
   return (
-    <article
-      className={cn(
-        "group relative flex flex-col justify-between rounded-2xl p-6 sm:p-7",
-        "bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-md",
-        "border border-slate-800/80 hover:border-sky-500/40",
-        "transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-sky-500/10",
-        "overflow-hidden"
-      )}
-    >
-      {/* Decorative gradient corner light */}
-      <div
-        className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-sky-500/10 blur-2xl transition-opacity duration-300 group-hover:bg-sky-500/20"
-        aria-hidden="true"
-      />
-
+    <article className="group rounded-md border border-slate-200 bg-white shadow-sm p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div>
-        {/* Top bar with icon and category badge */}
-        <div className="flex items-center justify-between gap-3 mb-5">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 transition-colors duration-300 group-hover:bg-sky-500 group-hover:text-slate-950">
-            <IconComponent className="h-6 w-6" aria-hidden="true" />
+        {/* Top Image Preview matching Xntrova */}
+        <div className="relative h-48 sm:h-52 w-full rounded-sm overflow-hidden mb-4 bg-slate-100">
+          <img
+            src={imgSrc}
+            alt={service.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute top-2.5 right-2.5">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-sm bg-white/95 text-[#0075A2] shadow-sm uppercase tracking-wider">
+              {service.category}
+            </span>
           </div>
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-slate-300">
-            {service.category}
-          </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-white tracking-tight mb-2.5 group-hover:text-sky-300 transition-colors">
+        <h3 className="font-bold text-[#101820] text-lg mb-2 group-hover:text-[#0075A2] transition-colors leading-snug">
           {service.title}
         </h3>
 
-        {/* Short benefit-oriented description */}
-        <p className="text-sm text-slate-300 leading-relaxed mb-5">
+        {/* Description */}
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
           {service.shortDescription}
         </p>
 
-        {/* Key deliverables */}
-        <ul className="space-y-2 mb-6" aria-label={`Deliverables for ${service.title}`}>
-          {service.deliverables.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-2 text-xs text-slate-400">
-              <CheckCircle2
-                className="h-3.5 w-3.5 text-teal-400 shrink-0 mt-0.5"
-                aria-hidden="true"
-              />
-              <span>{item}</span>
+        {/* Deliverables */}
+        <ul className="space-y-1.5 mb-5 text-xs text-slate-500">
+          {service.deliverables.slice(0, 3).map((d, idx) => (
+            <li key={idx} className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#0075A2] shrink-0" />
+              <span>{d}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Footer with metric highlight & CTA button */}
-      <div className="pt-4 border-t border-slate-800/70 flex items-center justify-between gap-3">
-        <div className="flex flex-col">
-          <span className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">
-            Target Outcome
-          </span>
-          <span className="text-xs font-bold text-emerald-400">
-            {service.metricsHighlight}
-          </span>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => {
-            if (onSelectService) {
-              onSelectService(service.title);
-            }
-            const formElement = document.getElementById("contact");
-            if (formElement) {
-              formElement.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors group/link cursor-pointer p-1 -m-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-400 rounded"
-          aria-label={`Explore ${service.title} service and request audit`}
+      {/* Learn More link in #0075A2 matching Xntrova */}
+      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+        <span className="text-[11px] font-semibold text-[#0075A2]">
+          {service.metricsHighlight}
+        </span>
+        <a
+          href="#audit"
+          onClick={() => onSelectService && onSelectService(service.title)}
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0075A2] hover:underline"
         >
-          <span>Explore Service</span>
-          <ArrowRight
-            className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1"
-            aria-hidden="true"
-          />
-        </button>
+          <span>Learn More</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </a>
       </div>
     </article>
   );

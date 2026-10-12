@@ -1,232 +1,229 @@
 "use client";
 
-import React from "react";
-import {
-  ArrowRight,
-  TrendingUp,
-  Target,
-  Sparkles,
-  CheckCircle2,
-  BarChart3,
-  Search,
-  ShieldCheck,
-} from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import React, { useState } from "react";
+import { CheckCircle2, AlertCircle } from "lucide-react";
+import { SERVICES } from "@/data/services";
 
 export function HeroSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.email.trim()) {
+      setErrorMsg("Please fill in your name and business email.");
+      return;
+    }
+    setErrorMsg("");
+    setIsSubmitting(true);
+    await new Promise((res) => setTimeout(res, 800));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
+
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-32 bg-gradient-to-b from-slate-950 via-[#051322] to-slate-950"
-      aria-label="Introduction and Value Proposition"
+      className="relative overflow-hidden bg-[#001F2B] text-white py-12 lg:py-16"
+      aria-label="Hero Section"
     >
-      {/* Background ambient lighting */}
+      {/* Background Teal Gradients matching Xntrova */}
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(0,180,216,0.15),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#001320]/75 via-[#012A3A]/55 to-[#01415A]/30"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -top-40 right-10 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_18%_45%,rgba(0,15,26,0.6),transparent_70%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute top-1/2 -left-32 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_60%,rgba(0,117,162,0.22),transparent_45%)]"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Hero Column */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-sky-500/10 text-sky-400 border border-sky-500/30 shadow-sm shadow-sky-500/10">
-              <Sparkles className="h-3.5 w-3.5 text-amber-400 shrink-0" aria-hidden="true" />
-              <span>DIGITAL STRATEGY • CREATIVE • TECHNOLOGY</span>
-            </div>
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-10 lg:gap-12">
+          {/* Left Hero Content */}
+          <div className="max-w-2xl">
+            <span className="inline-block text-xs font-semibold tracking-widest text-[#FAAE39] uppercase mb-3">
+              DIGITAL STRATEGY • CREATIVE • TECHNOLOGY
+            </span>
 
-            {/* Oversized Hero Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-black tracking-tight text-white leading-[1.08]">
-              Turn Digital Potential Into{" "}
-              <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-amber-300 bg-clip-text text-transparent">
-                Measurable Growth.
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight text-white leading-[1.15] mb-3">
+              Scale Your Business With The Best Digital Marketing Agency in Delhi
             </h1>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-              From performance marketing to high-performing digital experiences, we help ambitious businesses build visibility, attract the right audience, and convert opportunities into sustainable growth.
+            {/* Gold squiggly underline matching Xntrova */}
+            <svg
+              width="120"
+              height="10"
+              viewBox="0 0 120 10"
+              fill="none"
+              aria-hidden="true"
+              className="mb-5 text-[#FAAE39]"
+            >
+              <path
+                d="M2 7C24 2 96 2 118 7"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed mb-8 max-w-xl">
+              Unlock your business potential and connect with your targeted customers by partnering with Xntrova, the best digital marketing agency in Delhi. From performance marketing to high-performing digital experiences, we help ambitious businesses build visibility, attract the right audience, and convert opportunities into growth.
             </p>
 
-            {/* Dual CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-              <Button
+            <div className="flex flex-wrap gap-4">
+              <a
                 href="#audit"
-                variant="primary"
-                size="lg"
-                rightIcon={<ArrowRight className="h-4 w-4" />}
-                className="w-full sm:w-auto shadow-xl shadow-sky-500/20"
+                className="inline-flex items-center justify-center rounded-sm font-semibold transition-opacity px-7 py-3.5 text-sm bg-[#0075A2] text-white hover:opacity-90"
               >
-                Get a Free Digital Audit
-              </Button>
-
-              <Button
+                Get Free Digital Audit
+              </a>
+              <a
                 href="#services"
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto"
+                className="inline-flex items-center justify-center rounded-sm font-semibold transition-colors px-7 py-3.5 text-sm border border-white/30 text-white hover:bg-white/10"
               >
                 Explore Our Services
-              </Button>
-            </div>
-
-            {/* Trust highlights under CTAs */}
-            <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
-                <span>Zero Lock-in Free Audit</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-sky-400" aria-hidden="true" />
-                <span>Full-Funnel CRO Blueprint</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-amber-400" aria-hidden="true" />
-                <span>Proven +250% Growth Track</span>
-              </div>
+              </a>
             </div>
           </div>
 
-          {/* Right Hero Column: Marketing Analytics Dashboard Mockup */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 p-5 sm:p-6 border border-slate-700/80 shadow-2xl shadow-black/80 backdrop-blur-xl">
-              {/* Card top bar */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
-                <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/30">
-                    <BarChart3 className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h2 className="text-xs font-bold text-white leading-tight">
-                      Growth Command Center
-                    </h2>
-                    <span className="text-[10px] text-slate-400">
-                      Live Omnichannel Attribution
-                    </span>
-                  </div>
-                </div>
-
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Live Campaign
-                </span>
-              </div>
-
-              {/* Metric stats row */}
-              <div className="grid grid-cols-2 gap-3 mb-5">
-                <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Organic Search</span>
-                    <Search className="h-3.5 w-3.5 text-sky-400" />
-                  </div>
-                  <div className="text-xl font-black text-white">+250%</div>
-                  <span className="text-[10px] text-emerald-400 font-medium">
-                    ↑ 140+ Ranked Keywords
-                  </span>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Blended ROAS</span>
-                    <Target className="h-3.5 w-3.5 text-amber-400" />
-                  </div>
-                  <div className="text-xl font-black text-white">3.8x</div>
-                  <span className="text-[10px] text-emerald-400 font-medium">
-                    ↑ -36% Cost Per Acquisition
-                  </span>
-                </div>
-              </div>
-
-              {/* Conversion curve graph illustration */}
-              <div className="p-4 rounded-xl bg-slate-950/90 border border-slate-800 mb-4">
-                <div className="flex items-center justify-between text-xs mb-3">
-                  <span className="font-semibold text-slate-200">
-                    Growth Velocity Trajectory
-                  </span>
-                  <span className="text-[11px] font-bold text-sky-400">
-                    High Acceleration
-                  </span>
-                </div>
-
-                <svg
-                  viewBox="0 0 300 90"
-                  className="w-full h-20 overflow-visible"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#00B4D8" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#00B4D8" stopOpacity="0.0" />
-                    </linearGradient>
-                  </defs>
-                  {/* Grid lines */}
-                  <line x1="0" y1="20" x2="300" y2="20" stroke="#1e293b" strokeDasharray="3 3" />
-                  <line x1="0" y1="50" x2="300" y2="50" stroke="#1e293b" strokeDasharray="3 3" />
-                  <line x1="0" y1="80" x2="300" y2="80" stroke="#1e293b" strokeDasharray="3 3" />
-
-                  {/* Gradient area */}
-                  <path
-                    d="M 0 75 Q 60 70, 110 55 T 200 32 T 300 12 L 300 90 L 0 90 Z"
-                    fill="url(#curveGradient)"
-                  />
-                  {/* Trend line */}
-                  <path
-                    d="M 0 75 Q 60 70, 110 55 T 200 32 T 300 12"
-                    fill="none"
-                    stroke="#00B4D8"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  {/* Point circles */}
-                  <circle cx="110" cy="55" r="4" fill="#00B4D8" />
-                  <circle cx="200" cy="32" r="4" fill="#38BDF8" />
-                  <circle cx="300" cy="12" r="5" fill="#34D399" />
-                </svg>
-
-                <div className="flex items-center justify-between text-[10px] text-slate-500 mt-2 font-medium">
-                  <span>Audit & Setup</span>
-                  <span>Keyword Clustering</span>
-                  <span>Scale & Scale</span>
-                  <span>Dominance</span>
-                </div>
-              </div>
-
-              {/* Bottom active test metric */}
-              <div className="flex items-center justify-between text-xs px-2 text-slate-300">
-                <span className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-sky-400" />
-                  Core Web Vitals Pass Rate
-                </span>
-                <span className="font-bold text-white">99.4%</span>
-              </div>
-
-              {/* Floating badges outside card */}
-              <div
-                className="hidden sm:flex absolute -bottom-5 -left-6 items-center gap-2.5 p-3 rounded-xl bg-slate-900 border border-slate-700 shadow-xl backdrop-blur-md"
-                aria-hidden="true"
-              >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 font-bold">
-                  ✓
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-white">
-                    Verified Revenue Lift
-                  </div>
-                  <div className="text-[10px] text-slate-400">
-                    500+ Clients Retained
-                  </div>
-                </div>
-              </div>
+          {/* Right Hero: Floating White Free Audit Card */}
+          <div
+            id="audit"
+            className="w-full max-w-md justify-self-center lg:justify-self-end rounded-lg border border-slate-200 bg-white/98 shadow-[0_20px_50px_rgba(0,19,32,0.4)] p-6 sm:p-7 text-[#101820]"
+          >
+            <div className="mb-4">
+              <h2 className="text-xl font-bold text-[#101820]">
+                Get a Free Digital Audit
+              </h2>
+              <p className="text-xs text-slate-500 mt-1">
+                Tell us about your business and we’ll get back to you shortly.
+              </p>
             </div>
+
+            {isSubmitted ? (
+              <div className="py-6 text-center animate-fade-in">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-3">
+                  <CheckCircle2 className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-bold text-[#101820] mb-1">
+                  Audit Request Received!
+                </h3>
+                <p className="text-xs text-slate-600 mb-4">
+                  Thank you, {formData.name}. Our digital growth director will analyze your domain and contact you shortly.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-xs font-semibold text-[#0075A2] hover:underline cursor-pointer"
+                >
+                  Submit Another Inquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-3">
+                {errorMsg && (
+                  <div className="p-2.5 rounded text-xs bg-rose-50 text-rose-600 border border-rose-200 flex items-center gap-1.5">
+                    <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your Name*"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2]"
+                  />
+                  <input
+                    type="email"
+                    required
+                    placeholder="you@company.com*"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2]"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2]"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    value={formData.company}
+                    onChange={(e) =>
+                      setFormData({ ...formData, company: e.target.value })
+                    }
+                    className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2]"
+                  />
+                </div>
+
+                <select
+                  value={formData.service}
+                  onChange={(e) =>
+                    setFormData({ ...formData, service: e.target.value })
+                  }
+                  className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2] bg-white cursor-pointer"
+                >
+                  <option value="" disabled>
+                    Which service are you interested in?
+                  </option>
+                  {SERVICES.map((s) => (
+                    <option key={s.id} value={s.title}>
+                      {s.title}
+                    </option>
+                  ))}
+                  <option value="Complete Agency Retainer">
+                    Complete Agency Retainer
+                  </option>
+                </select>
+
+                <textarea
+                  rows={2}
+                  placeholder="Tell us about your business goals"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  className="w-full rounded-sm border border-slate-300 px-3.5 py-2 text-xs text-[#101820] outline-none focus:border-[#0075A2] focus:ring-1 focus:ring-[#0075A2] resize-y"
+                />
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3 rounded-sm bg-gradient-to-r from-[#101820] to-[#0075A2] text-white text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity disabled:opacity-50 cursor-pointer shadow-md"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

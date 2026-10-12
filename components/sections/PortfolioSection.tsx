@@ -3,45 +3,31 @@
 import React from "react";
 import { PORTFOLIO_PROJECTS } from "@/data/portfolio";
 import { PortfolioCard } from "@/components/ui/PortfolioCard";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
-import { ArrowRight, Sparkles } from "lucide-react";
 
 export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="py-20 sm:py-28 bg-slate-950 relative"
-      aria-labelledby="portfolio-heading"
+      className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] text-[#101820]"
+      aria-label="Portfolio and Selected Work"
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <SectionHeading
-          eyebrow="Case Studies & Impact"
-          title="Ideas Brought to"
-          highlightedText="Life."
-          description="Explore how we combine bespoke engineering, strategic media buying, and editorial design to transform business metrics for authentic industry leaders."
-        />
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#0075A2] block mb-2">
+            Selected Work
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3">
+            Ideas Brought to Life
+          </h2>
+          <p className="text-sm text-slate-600">
+            Proven results delivered for established enterprises and ambitious high-growth businesses.
+          </p>
+        </div>
 
-        {/* 3 Visually Attractive Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {PORTFOLIO_PROJECTS.map((project) => (
             <PortfolioCard key={project.id} project={project} />
           ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="mt-14 text-center">
-          <p className="text-xs sm:text-sm text-slate-400 mb-4">
-            Interested in viewing specific vertical case studies in your sector?
-          </p>
-          <Button
-            href="#contact"
-            variant="outline"
-            size="md"
-            rightIcon={<ArrowRight className="h-4 w-4" />}
-          >
-            Request Category Case Deck
-          </Button>
         </div>
       </div>
     </section>

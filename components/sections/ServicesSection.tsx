@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import { SERVICES } from "@/data/services";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
-import { ArrowRight, Layers } from "lucide-react";
 
 interface ServicesSectionProps {
   onSelectService?: (serviceTitle: string) => void;
@@ -14,7 +11,13 @@ interface ServicesSectionProps {
 export function ServicesSection({ onSelectService }: ServicesSectionProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categories = ["All", "Growth & Search", "Paid Media", "Technology", "Creative"];
+  const categories = [
+    "All",
+    "Growth & Search",
+    "Paid Media",
+    "Technology",
+    "Creative",
+  ];
 
   const filteredServices =
     selectedCategory === "All"
@@ -24,29 +27,31 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="py-20 sm:py-28 bg-slate-950 relative"
-      aria-labelledby="services-heading"
+      className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] text-[#101820]"
+      aria-label="Services Section"
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        {/* Section Heading */}
-        <SectionHeading
-          eyebrow="Integrated Capabilities"
-          title="Digital Solutions Built Around"
-          highlightedText="Your Growth."
-          description="We align organic visibility, targeted paid media, and custom technology into a unified engine designed to lower customer acquisition costs and build long-term enterprise value."
-        />
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
+        {/* Exact Heading matching Xntrova */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#101820] mb-3 leading-tight">
+            Best Digital Marketing Services in Delhi for Sustainable Business Growth
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Being the best creative digital marketing agency in New Delhi, we offer solutions that help you unlock long-term growth for your business.
+          </p>
+        </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-14">
+        {/* Category Filter Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {categories.map((cat) => (
             <button
               key={cat}
               type="button"
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${
+              className={`px-4 py-2 rounded-sm text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-sky-500 text-slate-950 font-bold shadow-md shadow-sky-500/20"
-                  : "bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800"
+                  ? "bg-[#0075A2] text-white shadow-sm"
+                  : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
               }`}
             >
               {cat}
@@ -54,7 +59,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
           ))}
         </div>
 
-        {/* 4 Cards Per Row on Large Screens, 2 on Tablets, 1 on Mobile */}
+        {/* Responsive Grid matching Xntrova (3-4 cols) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredServices.map((service) => (
             <ServiceCard
@@ -65,31 +70,14 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
           ))}
         </div>
 
-        {/* Bottom audit callout */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-[#041d2e] border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 shrink-0">
-              <Layers className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-white">
-                Unsure which channel delivers the highest ROI for your business?
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-400">
-                Let our senior growth analysts benchmark your competitive position across search, paid, and UX.
-              </p>
-            </div>
-          </div>
-
-          <Button
+        {/* Bottom "View More" CTA matching Xntrova */}
+        <div className="text-center mt-12">
+          <a
             href="#audit"
-            variant="gold"
-            size="md"
-            rightIcon={<ArrowRight className="h-4 w-4" />}
-            className="shrink-0 w-full sm:w-auto"
+            className="inline-flex items-center justify-center rounded-sm font-semibold transition-opacity px-8 py-3.5 text-sm bg-[#0075A2] text-white hover:opacity-90 shadow-sm"
           >
-            Claim Free Multi-Channel Audit
-          </Button>
+            Request Custom Service Scope
+          </a>
         </div>
       </div>
     </section>

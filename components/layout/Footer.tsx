@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { MAIN_NAV_ITEMS, CONTACT_INFO } from "@/data/navigation";
 import { SERVICES } from "@/data/services";
@@ -18,16 +19,16 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-slate-950 border-t border-slate-800 text-slate-400 text-sm">
-      {/* Upper Newsletter & Advisory CTA strip */}
-      <div className="border-b border-slate-900 bg-slate-950/60 py-10 px-5 sm:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+    <footer className="w-full bg-[#00141D] text-slate-300 text-sm border-t border-slate-800">
+      {/* Upper Newsletter Strip */}
+      <div className="border-b border-slate-800/80 bg-[#001822] py-8 px-5 sm:px-8 lg:px-10">
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-              Subscribe to Growth & Digital Insights
+            <h3 className="text-base sm:text-lg font-bold text-white">
+              Subscribe to Digital Growth Insights
             </h3>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Monthly breakdown on SEO algorithm changes, performance ad benchmarks, and conversion engineering.
+            <p className="text-xs text-slate-400 mt-1">
+              Monthly breakdown of SEO algorithm updates, PPC bidding shifts, and conversion frameworks.
             </p>
           </div>
 
@@ -36,9 +37,9 @@ export function Footer() {
             className="flex w-full sm:w-auto max-w-md items-center gap-2"
           >
             {newsletterSuccess ? (
-              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-4 py-2.5 rounded-lg">
+              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-4 py-2.5 rounded-sm">
                 <CheckCircle2 className="h-4 w-4" />
-                <span>Subscribed! Check your inbox for our latest briefing.</span>
+                <span>Thank you! You are subscribed to Xntrova Insights.</span>
               </div>
             ) : (
               <>
@@ -48,12 +49,12 @@ export function Footer() {
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="Enter your business email"
                   required
-                  aria-label="Email address for monthly insights newsletter"
-                  className="w-full sm:w-72 rounded-lg bg-slate-900 border border-slate-800 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                  aria-label="Email address for monthly insights"
+                  className="w-full sm:w-72 rounded-sm bg-slate-900 border border-slate-700 px-3.5 py-2 text-xs text-white placeholder-slate-400 outline-none focus:border-[#0075A2]"
                 />
                 <button
                   type="submit"
-                  className="rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs px-4 py-2.5 transition-colors shrink-0 flex items-center gap-1 cursor-pointer"
+                  className="rounded-sm bg-[#FAAE39] text-[#101820] font-bold text-xs px-5 py-2 hover:opacity-90 transition-opacity shrink-0 flex items-center gap-1 cursor-pointer"
                 >
                   <span>Join</span>
                   <ArrowRight className="h-3 w-3" />
@@ -65,29 +66,27 @@ export function Footer() {
       </div>
 
       {/* Main Multi-Column Footer Grid */}
-      <div className="max-w-7xl mx-auto py-12 sm:py-16 px-5 sm:px-8 lg:px-12">
+      <div className="max-w-[1440px] mx-auto py-12 lg:py-16 px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Column 1: Brand & Positioning */}
           <div className="lg:col-span-2 space-y-4">
-            <a
-              href="#hero"
-              className="flex items-center gap-2.5 text-xl font-black text-white"
-            >
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-sky-500 via-sky-400 to-teal-300 text-slate-950 font-black shadow-md shadow-sky-500/20">
-                X
-              </div>
-              <span className="font-extrabold tracking-tight">
-                XNTROVA<span className="text-sky-400">.</span>
-              </span>
+            <a href="#hero" className="inline-block">
+              <Image
+                src="https://res.cloudinary.com/di93stsbz/image/upload/v1788158799/cms-settings/cx4pzlnw2srdmd5ckfjp.png"
+                alt="Xntrova"
+                width={150}
+                height={38}
+                className="h-8 lg:h-9 w-auto object-contain brightness-0 invert"
+              />
             </a>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Xntrova Technologies is an award-grade digital marketing, creative strategy, and engineering agency based in New Delhi NCR. We empower high-growth brands to scale organic authority, dominate paid channels, and build exceptional digital products.
+              Xntrova is the premier digital marketing and technology company in Delhi NCR. We help ambitious brands create high-impact search presence, scale paid acquisition channels, and engineer seamless web platforms.
             </p>
 
             <div className="pt-2">
-              <span className="text-xs font-semibold text-slate-300 block mb-2.5">
-                Connect With Us
+              <span className="text-xs font-semibold text-slate-300 block mb-2">
+                Follow Us
               </span>
               <div className="flex flex-wrap gap-2">
                 {CONTACT_INFO.socials.map((s) => (
@@ -97,7 +96,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 hover:text-white hover:border-sky-500/50 hover:bg-slate-850 transition-all"
+                    className="px-3 py-1 rounded-sm bg-slate-900 border border-slate-700 text-xs font-medium text-slate-300 hover:text-white hover:border-[#0075A2] transition-colors"
                   >
                     {s.name}
                   </a>
@@ -109,14 +108,14 @@ export function Footer() {
           {/* Column 2: Navigation Links */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Explore
+              Quick Links
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               {MAIN_NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors"
+                    className="text-slate-400 hover:text-[#0075A2] transition-colors"
                   >
                     {item.label}
                   </a>
@@ -125,7 +124,7 @@ export function Footer() {
               <li>
                 <a
                   href="#audit"
-                  className="text-amber-400 font-semibold hover:text-amber-300 transition-colors"
+                  className="text-[#FAAE39] font-semibold hover:underline"
                 >
                   Get Free Audit →
                 </a>
@@ -136,14 +135,14 @@ export function Footer() {
           {/* Column 3: Services */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Core Capabilities
+              Services
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               {SERVICES.slice(0, 6).map((s) => (
                 <li key={s.id}>
                   <a
                     href="#services"
-                    className="text-slate-400 hover:text-sky-400 transition-colors"
+                    className="text-slate-400 hover:text-[#0075A2] transition-colors"
                   >
                     {s.title}
                   </a>
@@ -155,27 +154,27 @@ export function Footer() {
           {/* Column 4: Contact & Office */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Contact & Office
+              Contact Us
             </h4>
-            <ul className="space-y-3 text-xs">
-              <li className="flex items-start gap-2 text-slate-300">
-                <MapPin className="h-4 w-4 text-sky-400 shrink-0 mt-0.5" />
+            <ul className="space-y-2.5 text-xs">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-[#0075A2] shrink-0 mt-0.5" />
                 <span>{CONTACT_INFO.fullAddress}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-sky-400 shrink-0" />
+                <Phone className="h-4 w-4 text-[#0075A2] shrink-0" />
                 <a
                   href={`tel:${CONTACT_INFO.phoneRaw}`}
-                  className="text-slate-300 hover:text-sky-400 transition-colors"
+                  className="text-slate-300 hover:text-[#0075A2] transition-colors"
                 >
                   {CONTACT_INFO.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-sky-400 shrink-0" />
+                <Mail className="h-4 w-4 text-[#0075A2] shrink-0" />
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-slate-300 hover:text-sky-400 transition-colors"
+                  className="text-slate-300 hover:text-[#0075A2] transition-colors"
                 >
                   {CONTACT_INFO.email}
                 </a>
@@ -189,19 +188,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright & Compliance */}
-        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Xntrova Technologies. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} Xntrova. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#hero" className="hover:text-slate-400 transition-colors">
+            <a href="#hero" className="hover:text-slate-300 transition-colors">
               Privacy Policy
             </a>
             <span className="h-3 w-px bg-slate-800" />
-            <a href="#hero" className="hover:text-slate-400 transition-colors">
-              Terms of Engagement
-            </a>
-            <span className="h-3 w-px bg-slate-800" />
-            <a href="#hero" className="hover:text-slate-400 transition-colors">
-              Cookie Preferences
+            <a href="#hero" className="hover:text-slate-300 transition-colors">
+              Terms of Service
             </a>
           </div>
         </div>
