@@ -9,9 +9,8 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Why Xntrova", href: "#benefits" },
-  { label: "Process", href: "#process" },
   { label: "Work", href: "#portfolio" },
+  { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
 
