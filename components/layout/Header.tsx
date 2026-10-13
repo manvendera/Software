@@ -198,7 +198,7 @@ export function Header() {
               {/* Free Audit Button */}
               <a
                 href="#audit"
-                className="inline-flex items-center px-5 py-2.5 rounded-sm bg-[#FAAE39] text-[#101820] text-xs font-bold uppercase tracking-wider shadow-sm hover:shadow-md hover:bg-[#e89c25] active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2]"
+                className="inline-flex items-center px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-sm bg-[#FAAE39] text-[#101820] text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-sm hover:shadow-md hover:bg-[#e89c25] active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0075A2]"
               >
                 Get Free Audit
               </a>

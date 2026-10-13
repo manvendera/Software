@@ -112,7 +112,7 @@ export function AboutSection() {
 
           {/* Right Column: Signature Xntrova Orbiting Diagram Visual */}
           <div className="relative">
-            <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:max-w-[460px]">
+            <div className="relative mx-auto aspect-square w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px]">
               {/* Inner ring */}
               <div
                 className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0075A2]/20"
@@ -125,8 +125,8 @@ export function AboutSection() {
               />
 
               {/* Center circular badge with Xntrova Logo */}
-              <div className="absolute inset-0 m-auto flex h-32 w-32 flex-col items-center justify-center gap-1.5 rounded-full border border-slate-200/90 bg-white p-4 text-center shadow-[0_12px_40px_rgba(0,117,162,0.18)] z-10 hover:scale-105 transition-transform duration-300">
-                <div className="relative h-7 w-24">
+              <div className="absolute inset-0 m-auto flex h-24 w-24 sm:h-32 sm:w-32 flex-col items-center justify-center gap-1 sm:gap-1.5 rounded-full border border-slate-200/90 bg-white p-2.5 sm:p-4 text-center shadow-[0_12px_40px_rgba(0,117,162,0.18)] z-10 hover:scale-105 transition-transform duration-300">
+                <div className="relative h-5 w-18 sm:h-7 sm:w-24">
                   <Image
                     src="https://res.cloudinary.com/di93stsbz/image/upload/v1788158799/cms-settings/cx4pzlnw2srdmd5ckfjp.png"
                     alt="Xntrova"
@@ -134,19 +134,19 @@ export function AboutSection() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">
                   Driven by Results
                 </span>
               </div>
 
               {/* 4 Corner Orbiting Floating Cards */}
               {/* Top Left */}
-              <div className="absolute left-0 top-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
-                    <Eye className="h-4 w-4" />
+              <div className="absolute left-0 top-[2%] sm:top-[4%] w-[120px] sm:w-[155px]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-2.5 sm:p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
+                    <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </span>
-                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
+                  <p className="mt-1.5 sm:mt-2 font-bold text-[#101820] text-[11px] sm:text-xs leading-tight">
                     Build Visibility
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -156,12 +156,12 @@ export function AboutSection() {
               </div>
 
               {/* Top Right */}
-              <div className="absolute right-0 top-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
-                    <Users className="h-4 w-4" />
+              <div className="absolute right-0 top-[2%] sm:top-[4%] w-[120px] sm:w-[155px]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-2.5 sm:p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
+                    <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </span>
-                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
+                  <p className="mt-1.5 sm:mt-2 font-bold text-[#101820] text-[11px] sm:text-xs leading-tight">
                     Engage Audience
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -171,12 +171,12 @@ export function AboutSection() {
               </div>
 
               {/* Bottom Left */}
-              <div className="absolute left-0 bottom-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
-                    <MousePointerClick className="h-4 w-4" />
+              <div className="absolute left-0 bottom-[2%] sm:bottom-[4%] w-[120px] sm:w-[155px]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-2.5 sm:p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
+                    <MousePointerClick className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </span>
-                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
+                  <p className="mt-1.5 sm:mt-2 font-bold text-[#101820] text-[11px] sm:text-xs leading-tight">
                     Drive Conversions
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">
@@ -186,12 +186,12 @@ export function AboutSection() {
               </div>
 
               {/* Bottom Right */}
-              <div className="absolute right-0 bottom-[4%] w-[140px] sm:w-[155px]">
-                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
-                    <Gauge className="h-4 w-4" />
+              <div className="absolute right-0 bottom-[2%] sm:bottom-[4%] w-[120px] sm:w-[155px]">
+                <div className="rounded-xl border border-slate-200/90 bg-white/95 backdrop-blur-sm p-2.5 sm:p-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:border-[#0075A2]/50 hover:shadow-md transition-all duration-300">
+                  <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-[#0075A2]/10 text-[#0075A2]">
+                    <Gauge className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </span>
-                  <p className="mt-2 font-bold text-[#101820] text-xs leading-tight">
+                  <p className="mt-1.5 sm:mt-2 font-bold text-[#101820] text-[11px] sm:text-xs leading-tight">
                     Measure & Improve
                   </p>
                   <p className="mt-1 text-[11px] text-slate-500 leading-snug hidden sm:block">

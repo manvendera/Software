@@ -84,16 +84,16 @@ export function HeroSection() {
               Unlock your business potential and connect with your targeted customers by partnering with Xntrova, the best digital marketing agency in Delhi. From performance marketing to high-performing digital experiences, we help ambitious businesses build visibility, attract the right audience, and convert opportunities into growth.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3.5 sm:gap-4">
               <a
                 href="#audit"
-                className="inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-200 px-8 py-3.5 text-sm bg-[#0075A2] text-white hover:bg-[#008ec2] hover:shadow-[0_8px_24px_rgba(0,117,162,0.35)] active:scale-[0.98]"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-200 px-8 py-3.5 text-sm bg-[#0075A2] text-white hover:bg-[#008ec2] hover:shadow-[0_8px_24px_rgba(0,117,162,0.35)] active:scale-[0.98]"
               >
                 Get Free Digital Audit
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-200 px-8 py-3.5 text-sm border border-white/30 text-white hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-200 px-8 py-3.5 text-sm border border-white/30 text-white hover:bg-white/10 hover:border-white/50 active:scale-[0.98]"
               >
                 Explore Our Services
               </a>
